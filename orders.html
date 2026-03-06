@@ -506,6 +506,13 @@ loadOrders();
 document.addEventListener('contextmenu', function(e){
     e.preventDefault(); // يمنع قائمة النقر بالزر الأيمن
 });
+  window.onpopstate = function () {
+    // إذا حاول المستخدم الرجوع إلى صفحة تسجيل الدخول
+    if (location.pathname.includes("login.html")) {
+      // إعادة توجيه للصفحة الرئيسية بدل الرجوع
+      location.replace("dashboard-home.html");
+    }
+  };
   </script>
 </body>
 </html>
